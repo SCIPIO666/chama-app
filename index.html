@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>chama app</title>
+</head>
+<body>
+<nav class="navigation-ribbon">
+    <div class="hamburger-menu-button">☰</div>
+    <div class="logo">svg logo</div>
+    <div class="sign-in">
+        <div class="image"></div>
+        <p class="username">username</p>
+        <div class="log-out">log out</div>
+    </div>
+
+</nav>
+<div class="container">
+    <div class="navigation">     
+            <div class="menu-close-button">X</div>      
+            <ul class="nav-menu">
+                <li class="members"><a href="">Members</a></li>
+                <li class="borrowers"><a href="">Non Member Borrowers</a></li>
+                <li class="contributions"><a href="">Contributions</a></li>
+                <li class="loans"><a href="">Loans</a></li>
+                <li class="profit-loss"><a href="">Profit/loss</a></li>
+                <li class="profit-share"><a href="">Profit Share</a></li>
+                <li class="non-performing-loans"><a href="">Non non-performing-loans</a></li>                 
+            </ul>                  
+    </div>
+
+    <div class="dashboard-container split-width">
+            <form class="year-selection-container">
+                <div class="year-container">
+                    <label for="year">Year:</label>
+                    <select id="year">
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+            </form>
+            <div class="dashboard-item total-contributions">
+                <h2>Total Contributions</h2>
+            </div>
+            <div class="dashboard-item total-outstanding-loans-principal">
+                <h2>Total Outstanding Loans(principal)</h2>
+            </div>
+            <div class="dashboard-item total-outstanding-loans-intrest">
+                <h2>Total Outstanding Loans(intrest)</h2>
+            </div>
+            <div class="dashboard-item  total-cash-at-hand">
+                <h2>Total Cash At Hand</h2>
+            </div>
+            <div class="dashboard-item chama-bascket">
+                <h2>Chama Bascket</h2>
+            </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
