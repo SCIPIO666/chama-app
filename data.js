@@ -1,691 +1,563 @@
-const appModel={
-
+const appModel = {
     year: 2025,
 
-    members:
-    [
+    members: [
         {
             id: 1,
             firstName: "",
             lastName: "",
-            registeredNumbers:"" ,
+            registeredNumbers: "",
             monthlyContributions: {
-                january: "",
-                february: "",
-                march: "",
-                april: "",
-                may: "",
-                june: "",
-                july: "",
-                august: "",
-                september: "",
-                october: "",
-                november: "",
-                december: "",
+                january: 0,
+                february: 0,
+                march: 0,
+                april: 0,
+                may: 0,
+                june: 0,
+                july: 0,
+                august: 0,
+                september: 0,
+                october: 0,
+                november: 0,
+                december: 0,
             },
-            totalContributions: "",
-            outstandingDebt: "",
+            totalContributions: 0,
+            outstandingDebt: 0,
             borrowingHistory: {
                 january: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 february: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 march: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 april: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 may: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 june: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 july: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 august: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 september: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 october: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 november: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 december: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
             },
             profitShare: {
-                january: "",
-                february: "",
-                march: "",
-                april: "",
-                may: "",
-                june: "",
-                july: "",
-                august: "",
-                september: "",
-                october: "",
-                november: "",
-                december: "",  
+                january: 0,
+                february: 0,
+                march: 0,
+                april: 0,
+                may: 0,
+                june: 0,
+                july: 0,
+                august: 0,
+                september: 0,
+                october: 0,
+                november: 0,
+                december: 0,
             },
-            memberAccountBalance: "",
-
+            memberAccountBalance: 0,
         },
 
         {
             id: 2,
             firstName: "",
             lastName: "",
-            registeredNumbers:"" ,
+            registeredNumbers: "",
             monthlyContributions: {
-                january: "",
-                february: "",
-                march: "",
-                april: "",
-                may: "",
-                june: "",
-                july: "",
-                august: "",
-                september: "",
-                october: "",
-                november: "",
-                december: "",
+                january: 0,
+                february: 0,
+                march: 0,
+                april: 0,
+                may: 0,
+                june: 0,
+                july: 0,
+                august: 0,
+                september: 0,
+                october: 0,
+                november: 0,
+                december: 0,
             },
-            totalContributions: "",
-            outstandingDebt: "",
+            totalContributions: 0,
+            outstandingDebt: 0,
             borrowingHistory: {
                 january: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 february: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 march: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 april: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 may: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 june: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 july: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 august: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 september: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 october: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 november: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
                 december: {
-                    borrowedPrinciple: "",
-                    paidPrinciple: "",
-                    paidInterest: "",
-                    outstandingArrears: "",
-                    paidArrears: "",
-
+                    borrowedPrinciple: 0,
+                    paidPrinciple: 0,
+                    paidInterest: 0,
+                    outstandingArrears: 0,
+                    paidArrears: 0,
                 },
             },
             profitShare: {
-                january: "",
-                february: "",
-                march: "",
-                april: "",
-                may: "",
-                june: "",
-                july: "",
-                august: "",
-                september: "",
-                october: "",
-                november: "",
-                december: "",  
-            },            
-            memberAccountBalance: "",
+                january: 0,
+                february: 0,
+                march: 0,
+                april: 0,
+                may: 0,
+                june: 0,
+                july: 0,
+                august: 0,
+                september: 0,
+                october: 0,
+                november: 0,
+                december: 0,
+            },
+            memberAccountBalance: 0,
         },
-
-
     ],
 
-    loans: 
-    [
-        {members: []},//dynamically generated
-        {nonMembers:
-        [   {
+    loans: {
+        members: [],
+        nonMembers: [
+            {
                 id: 1,
                 firstName: "",
-                lastName: "",            
+                lastName: "",
                 borrowingHistory: {
                     january: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     february: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     march: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     april: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     may: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     june: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     july: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     august: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     september: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     october: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     november: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     december: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                 },
-                isNonPerformingAmount: "",
+                isNonPerformingAmount: 0,
             },
 
             {
                 id: 2,
                 firstName: "",
-                lastName: "",            
+                lastName: "",
                 borrowingHistory: {
                     january: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     february: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     march: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     april: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     may: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     june: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     july: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     august: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     september: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     october: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     november: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                     december: {
-                        borrowedPrinciple: "",
-                        paidPrinciple: "",
-                        paidInterest: "",
-                        outstandingArrears: "",
-                        paidArrears: "",
-
+                        borrowedPrinciple: 0,
+                        paidPrinciple: 0,
+                        paidInterest: 0,
+                        outstandingArrears: 0,
+                        paidArrears: 0,
                     },
                 },
-                isNonPerformingAmount: "",
-            }, 
-        ]           
+                isNonPerformingAmount: 0,
+            },
+        ]
+    },
+
+    currentGroupProfit: 0,
+    currentGroupLoss: 0,
+    averageMonthOnMonthProfit: 0,
+    averageMonthOnMonthLoss: 0,
+    percentageReturnOnInvestment: 0,
+    monthlyProfits: {
+        january: 0,
+        february: 0,
+        march: 0,
+        april: 0,
+        may: 0,
+        june: 0,
+        july: 0,
+        august: 0,
+        september: 0,
+        october: 0,
+        november: 0,
+        december: 0,
+    },
+
+    cashInCashOutLedger: {
+        january: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" },
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
         },
-    ],
-
-currentGroupProfit: "",
-currentGroupLoss: "",
-averageMonthOnMonthProfit: "",
-averageMonthOnMonthLoss: "",
-percentageReturnOnInvestment: "",
-monthlyProfits: {
-                january: "",
-                february: "",
-                march: "",
-                april: "",
-                may: "",
-                june: "",
-                july: "",
-                august: "",
-                september: "",
-                october: "",
-                november: "",
-                december: "",  
-},
-
-cashInCashOutLedger:
-[
-                {january:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {february:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {march:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {april:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {may:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {june:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {july:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {august:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {september:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {october:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {november:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},
-                {december:[{moneyIn:[{
-                    date: "",
-                    amount: "",
-                    from: "",
-                }]},{
-                    moneyOut: [
-                        {
-                            date: "",
-                            amount: "",
-                            to: "",
-                            transactionCharges: ""
-                        }
-                    ]
-                }]},          
-],
+        february: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        march: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        april: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        may: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        june: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        july: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        august: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        september: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        october: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        november: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+        december: {
+            moneyIn: [
+                { date: "", amount: 0, from: "" }
+            ],
+            moneyOut: [
+                { date: "", amount: 0, to: "", transactionCharges: 0 }
+            ]
+        },
+    },
 };
