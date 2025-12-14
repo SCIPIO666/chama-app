@@ -165,6 +165,32 @@ transition: transform .3s ease-in-out;
 .nav-menu{
     height: 90%;
 
+
+}
+.nav-menu li a{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin: 5px;
+
+    transition: background .3s ease-in-out,font-weight .1s ease-in-out, .3s ease-in-out,border-radius .3s ease-in-out;
+}
+.nav-menu li a:hover{
+          background: linear-gradient(to bottom, #1E3C72, #2A5298, #4B79A1);
+    border-radius: 5px;
+box-shadow: 1px 3px 12px rgba(0,0,0,0.5);
+border-radius: 5px;
+font-weight: bold;
+
+}
+.nav-menu li{
+    text-transform: uppercase;
+    list-style: none;
+    padding: 5px;
+    margin: 5px auto;
+
 }
 .menu-close-button{
  position: absolute;   
@@ -185,6 +211,7 @@ transition: transform .3s ease-in-out;
     transform: translateX(-6%);
     height: 100%;
     width: 17;
+        border: solid 2px white;
 }
 .split-width{
     width: 80%;
