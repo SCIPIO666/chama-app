@@ -219,7 +219,7 @@ font-weight: bold;
     transform: translateX(-4%);
     margin: 0 auto;
 }
-.user{
+/* .user{
 
 }
 .user-image{
@@ -242,4 +242,201 @@ font-weight: bold;
 }
 .profile-item{
 
+}
+.graph-view-container{
+
+} */
+ /* --- Styles for Profile Views (.user) --- */
+.user {
+    width: 300px; 
+    height: auto;
+    min-height: 400px; 
+    margin: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #415A77; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease-in-out;
+}
+
+.user:hover {
+    transform: translateY(-5px);
+}
+
+.user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #98C1D9;
+    border: 3px solid #E0FBFC;
+    margin-bottom: 15px;
+}
+
+.profile-item {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px dashed #6D7F9A;
+}
+
+.profile-item span {
+    font-weight: bold;
+    color: #E0FBFC;
+}
+
+/* --- Styles for Action Buttons --- */
+
+.user-actions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.user-actions-container button {
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1B263B;
+    background-color: #98C1D9; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.user-actions-container button:hover {
+    background-color: #E0FBFC;
+    transform: scale(1.02);
+}
+
+/* --- Styles for Graph Visualization --- */
+
+.graph-view-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1B263B;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.graph-view-container h2,
+.graph-view-container h3 {
+    text-align: center;
+    color: #98C1D9;
+    margin-bottom: 15px;
+}
+
+.chart-area {
+    /* This div holds the charting library's canvas/svg */
+    width: 100%;
+    min-height: 400px;
+    background-color: rgba(224, 251, 252, 0.05);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #98C1D9;
+}
+
+/* --- Styles for Tables (Contributions, Loans, Ledger) --- */
+
+table {
+    width: 95%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #415A77;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+thead {
+    background-color: #0D1B2A; 
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #6D7F9A;
+}
+
+th {
+    color: #E0FBFC;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #38495c; 
+}
+
+tbody tr:hover {
+    background-color: #5d7494;
+    transition: background-color 0.2s;
+}
+
+/* --- Styles for Forms (Add Member) --- */
+
+.form {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    margin: 20px auto;
+    background-color: #415A77;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.form h2 {
+    text-align: center;
+    color: #98C1D9;
+    margin-bottom: 25px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #E0FBFC;
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"] {
+    padding: 10px;
+    border: 1px solid #6D7F9A;
+    border-radius: 4px;
+    background-color: #1B263B;
+    color: #E0FBFC;
+    font-size: 1rem;
+}
+
+.save-member {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1B263B;
+    background-color: #98C1D9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.save-member:hover {
+    background-color: #E0FBFC;
+    transform: translateY(-2px);
 }

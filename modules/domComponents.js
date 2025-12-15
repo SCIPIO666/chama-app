@@ -2,6 +2,8 @@ const domElements = {
     hamburgerButton: document.querySelector(".hamburger-menu-button"),
     closeButton: document.querySelector(".menu-close-button"),
     navMenu: document.querySelector(".nav-menu"),
+    navSlider: document.querySelector(".navigation"),
+    navSliderVisible: document.querySelector(".visible"),
     menuItemAddMembers: document.querySelector(".add-members"),
     menuItemMemberProfiles: document.querySelector(".member-profiles"),
     menuItemContributions: document.querySelector(".contributions"),
@@ -316,6 +318,12 @@ class CreateElements {
     
     createContributionsTable(year, membersArray) {
         this.parentElem.innerHTML = "";
+
+        // --- Data Setup and Aggregation for Graph and Table ---
+        const yearData = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const monthlyTotals = Array(12).fill(0);
+
+
         const title = this.createElement("h2", "textContent", `MEMBER CONTRIBUTIONS ${year}`);
         this.parentElem.appendChild(title);
 
@@ -402,6 +410,10 @@ class CreateElements {
 
         table.appendChild(tbody);
         this.parentElem.appendChild(table);
+        //add graph 
+        const graphTitle = `Monthly Contribution Trend (${year})`;
+        const graphContainer = this.generateGraph(yearData, monthlyTotals, graphTitle); 
+        this.parentElem.appendChild(graphContainer);
     }
 
     createNonPerformingLoansTable(year, nonMembersArray) {
@@ -548,7 +560,7 @@ class CreateElements {
         this.parentElem.appendChild(table);
     }
     generateGraph(intervals, arrayCoordinates, graphTitle) {
-    this.parentElem.innerHTML = "";
+    //this.parentElem.innerHTML = "";
     const graphContainer = this.createElement("div", "class", "graph-view-container");
     const title = this.createElement("h2", "textContent", graphTitle);
     graphContainer.appendChild(title);
@@ -561,15 +573,22 @@ class CreateElements {
     chartArea.setAttribute('data-intervals', JSON.stringify(intervals));
     chartArea.setAttribute('data-coordinates', JSON.stringify(arrayCoordinates));
     
-    chartArea.appendChild(chartInfo); // Placeholder content
+    chartArea.appendChild(chartInfo);
     
     graphContainer.appendChild(chartArea);
     
-    // 5. Append to parent
-    this.parentElem.appendChild(graphContainer);
-    
+    //this.parentElem.appendChild(graphContainer);
     return graphContainer;
-}
+
+
+    // Example Usage :
+    //const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    //const contributions = [15000, 18500, 17000, 20500, 22000, 25000, 24000, 26000, 27500, 28000, 30000, 31000];
+
+    // components.generateGraph(months, contributions,"MONTH VS CONTRIBUTIONS");
+    
+
+    }
     restoreDashboard() {
         this.parentElem.innerHTML = "";
         this.parentElem.classList.add("dashboard-container", "split-width");
@@ -614,15 +633,7 @@ class CreateElements {
     }
 
 }
-class Events {
-    constructor(elements) {
-        this.elements = elements;
-    }
-}
-const components = new CreateElements(domElements); 
-const eventDelegations = new Events(domElements); 
-export {
-    domElements,
-    components,
-    eventDelegations
-};
+
+const components = new CreateElements(domElements);  
+
+export {domElements,components,};
