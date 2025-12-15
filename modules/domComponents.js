@@ -34,12 +34,11 @@ class CreateElements{
         }
         return elem;
     }
-    createTableHeaders(array){
+    createTableRow(array){
             //rowDataArray = [
-            //     { content: "Jane Smith", isHeader: true, rowSpan: 1, colSpan: 1, header: "name",scope:""},
-            //     { content: "Jane Smith", isHeader: false, rowSpan: 1, colSpan: 1, header: "name",scope:""},            
+            //     { content: "Jane Smith", isHeader: true, rowSpan: 1, colSpan: 1, header: "name",scope:"", id:""},
+            //     { content: "Jane Smith", isHeader: false, rowSpan: 1, colSpan: 1, header: "name",scope:"", id:""},            
             // ];
-            const table =this.createElement("table");
             const row=this.createElement("tr");
             let cellElem;
             array.forEach(data=>{
@@ -56,11 +55,13 @@ class CreateElements{
                     if(data.header){
                         cellElem.setAttribute("headers",data.header);
                     }
+                    if(data.id){
+                        cellElem.setAttribute("id",data.id);
+                    }
                     cellElem.textContent=data.content;
-                    row.appendChild(cellElem);
-                    table.appendChild(headerElem);               
+                    row.appendChild(cellElem);            
             });
-            return table;
+            return row;
     }
     createForm(title,fieldsArray){
         const form=this.createElement("form","class","form");
@@ -101,25 +102,36 @@ class CreateElements{
     createProfile(profileObject){
         const ctn=this.createElement("div","class","user");
         const image=this.createElement("img","class","user-image");
+        ctn.appendChild(image);
         const fullName= profileObject.firstName + " " + profileObject.lastName;
         const labelElem=this.createElement("span","textContent","Name: ");
         const nameElem=this.createElement("div","class","name profile-item");
         nameElem.innerHTML=`${labelElem}: ${fullName}`;
+        ctn.appendChild(nameElem);
 
         const registeredNumbers= profileObject.registeredNumbers;
         const spanElem=this.createElement("span","textContent","Registered Numbers: ");
         const numberElem=this.createElement("div","class","numbers profile-item");
         numberElem.innerHTML=`${spanElem}: ${registeredNumbers}`;
+        ctn.appendChild(numberElem);
 
         const contributions= profileObject.totalContributions;
         const spanCont=this.createElement("span","textContent","Total Contributions: ");
         const contElem=this.createElement("div","class","contributions profile-item");
         contElem.innerHTML=`${spanCont}: ${contributions}`;
+        ctn.appendChild(contElem);
+
+        const returnOnInvestment= profileObject.totalProfit;
+        const spanLabel=this.createElement("span","textContent","Total Profit : ");
+        const returnOnInvestmentElem=this.createElement("div","class","total-profit profile-item");
+        returnOnInvestmentElem.innerHTML=`${spanLabel}: ${returnOnInvestment}`;        
+        ctn.appendChild(returnOnInvestmentElem);
 
         const bal= profileObject.memberAccountBalance;
         const span=this.createElement("span","textContent","Account Balance: ");
         const balElem=this.createElement("div","class","balance profile-item");
         balElem.innerHTML=`${span}: ${bal}`;
+        ctn.appendChild(balElem);
 
         const userActionsContainer=this.createElement("div","class","user-actions-container");
         const button1=this.createElement("button","class","borrowing-summary");
@@ -130,22 +142,51 @@ class CreateElements{
         button3.textContent="Profit Share";  
         userActionsContainer.appendChild(button1) ;
         userActionsContainer.appendChild(button2) ;
-        userActionsContainer.appendChild(button3)   ;
-         
-
-
-
-
-
-
+        userActionsContainer.appendChild(button3) ;
+        ctn.appendChild(userActionsContainer);
+        this.parentElem.appendChild(ctn);
     }
     generateProfileGrid(profilesDataArray){
+        profilesDataArray.forEach(profileObject=>{
+            this.createProfile(profileObject);
+        });
+    }
+    createLedgerMonthLayer(title,month,monthObject){
+            //rowDataArray = [
+            //     { content: "Jane Smith", isHeader: true, rowSpan: 1, colSpan: 1, header: "name",scope:""},
+            //     { content: "Jane Smith", isHeader: false, rowSpan: 1, colSpan: 1, header: "name",scope:""},            
+            // ];
+        const table =this.createElement("table");
+        const tableData1=[{ content: `${month.toUpperCase()} ${title.toUpperCase()}`, isHeader: true, rowSpan: 1, colSpan: 4, header: "",scope:"column",id: month}]
+        const headerRow1=this.createTableRow(tableData1);
+        table.appendChild(headerRow1);//main header
 
+        const headers=["NO.","DATE","FROM","AMOUNT (KSHS)"];
+        let initData=[];
+        headers.forEach(header=>{
+                 const tableData2=[{ content: header, isHeader: true, rowSpan: 1, colSpan: 1, header: month,scope:"column"}]
+                initData.push(tableData2);
+        });
+        const headerRow2=this.createTableRow(initData);
+        table.appendChild(headerRow2);//headers
+
+        let cells=[];
+        if(title.toLowerCase.trim()==="moneyin"){
+            cells=[...monthObject.moneyIn];
+        }
+         if(title.toLowerCase.trim()==="moneyout"){
+            cells=[...month.moneyOut]
+        }       
+
+        cells.forEach(cell=>{
+
+        });
+   
     }
     generateLedger(ledgerData){
 
     }
-    generateGraph(intervals,arrayCoordinates){
+    generateGraph(heading,type="",intervals,arrayCoordinates){
 
     }
     restoreDashboard(){
@@ -183,7 +224,12 @@ class CreateElements{
     }
 
 }
-
+class Events{
+    constructor(elements){
+        this.elements=elements;
+    }
+}
 const ctn=domElements.dashboard;
 const components=new CreateElements(ctn);
-export {domElements,components};
+const eventDelegations=new Events(ctn);
+export {domElements,components,eventDelegations};

@@ -159,6 +159,7 @@ const appModel = {
                 november: 0,
                 december: 0,
             },
+            totalProfit: 0,
             memberAccountBalance: 0,
         },
 
@@ -319,6 +320,7 @@ const appModel = {
                 november: 0,
                 december: 0,
             },
+            totalProfit: 0,
             memberAccountBalance: 0,
         },
     ],
