@@ -440,3 +440,32 @@ tbody tr:hover {
     background-color: #E0FBFC;
     transform: translateY(-2px);
 }
+.modal {
+    position: fixed;
+    top: 50px; 
+    left: 5%;
+    width: 90vw;
+    height: 90vh; 
+    max-height: 90vh; 
+    background-color: #1B263B;
+    color: #E0FBFC;
+    border: solid 2px #5D6D58; 
+    overflow-y: scroll;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    overflow-y: auto;
+    display: none; 
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-top: 5px; 
+}
+.hide {
+    display: none;
+}
+
+.show {
+    display: block; 
+}

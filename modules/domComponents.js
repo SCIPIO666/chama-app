@@ -15,6 +15,8 @@ const domElements = {
     dashboard: document.querySelector(".dashboard-container"),
     yearSelection: document.querySelector("#year"),
     navigationRibbon: document.querySelector(".navigation-ribbon"),
+    modal: document.querySelector(".modal"),
+    container: document.querySelector(".container"),
 
 }
 

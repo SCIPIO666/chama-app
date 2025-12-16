@@ -47,10 +47,17 @@ class ModalRenderer{
         this.componentClass=componentClass;
     }
     showModal(){
+        this.elements.modal.classList.add("show");
+        this.elements.modal.classList.remove("hide");
+        this.elements.container.toggle("hide");
+    }
+    delegateCloseEventOnClick(){
 
     }
     closeModal(){
-        
+        this.elements.modal.classList.add("hide");
+        this.elements.modal.classList.remove("show");
+        this.elements.container.toggle("hide");
     }
     renderAddLedgerTransactionsModalOnclick(){
 
