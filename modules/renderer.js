@@ -124,8 +124,17 @@ class ModalRenderer{
         const title=this.componentClass.createElement("h2","textContent",`${month.toUpperCase()}`);
         container.appendChild(title);
         for(let item in monthObject){
+
+            if(item==="outstandingArrears"){
+                const itemElem1=document.createElement("li");
+                const itemElem2=document.createElement("li");
+                itemElem1.innerHTML=`Outstanding Principle : <span class="borrowing-item-value">${monthObject[item][principle]}</span>}`;
+                itemElem2.innerHTML=`Outstanding Interest : <span class="borrowing-item-value">${monthObject[item][interest]}</span>}`;    
+                container.appendChild(itemElem1); 
+                container.appendChild(itemElem2);                 
+            }
             const itemElem=document.createElement("li");
-            itemElem.innerHTML=`${this.splitAndCapitalize(item)} : <span class="borrowing-item-value">${monthObject.item}</span>}`;
+            itemElem.innerHTML=`${this.splitAndCapitalize(item)} : <span class="borrowing-item-value">${monthObject[item]}</span>}`;
             container.appendChild(itemElem);
         }
 
@@ -133,16 +142,35 @@ class ModalRenderer{
 
     }
     renderUserBorrowingHistoryModal(historyObject){
-        
+        const parent=this.elements.modal;
+        const title=this.componentClass.createElement("h2","textContent","BORROWING HISTORY");
+        parent.appendChild(title);
+        for(let month in historyObject){
+            const currentMonthHistory=this.renderOneMonthHistory(month,historyObject[month]);
+            parent.appendChild(currentMonthHistory);
+        }
+        this.initModal();
+
     }
-    renderUserMonthlyContributionsModal(){
+    renderUserMonthlyContributionsModal(member,contributionsObject){
+        const table=this.componentClass.createElement("table","class","user-contributions-container");
+        const title1=this.componentClass.createElement("h2","textContent",member.toUpperCase());
+        const title2=this.componentClass.createElement("h2","textContent","MONTHLY CONTRIBUTIONS");
+        table.appendChild(title1);
+        table.appendChild(title2);
+
+        for(let month in contributionsObject){
+            const rowDataArray= [{ content: month, isHeader: true, rowSpan: 1, colSpan: 1, header: "",scope:"row", id:"january"},{ content: contributionsObject[month], isHeader: false, rowSpan: 1, colSpan: 1, header: "january",scope:"row", id:""}];
+            const row=this.componentClass.createTableRow(rowDataArray);
+            table.appendChild(row);
+        }
+
+        const parent=this.elements.modal;
+        parent.appendChild(table);
+        this.initModal();
 
     }
     renderUserProfitShareModal(){
-
-    }
-    renderUserBorrowingHistoryModal(){
-
     }
 
 }
