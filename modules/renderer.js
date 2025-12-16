@@ -108,8 +108,32 @@ class ModalRenderer{
     }
 
     //-----user profile buttons------//
-    renderUserBorrowingHistoryModal(){
+    splitAndCapitalize(camelCaseWord) {
+        const regex = /(?=[A-Z])/;
+        const spacedWord = camelCaseWord.replace(regex, " ");
+        const words = spacedWord.split(" ");
+        const result = words.map(word => {
+            if (!word) return ""; 
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }).join(" ");
 
+        return result;
+    }
+    renderOneMonthHistory(month,monthObject){
+        const container=this.componentClass.createElement("ul","class","borrowing-month-container");
+        const title=this.componentClass.createElement("h2","textContent",`${month.toUpperCase()}`);
+        container.appendChild(title);
+        for(let item in monthObject){
+            const itemElem=document.createElement("li");
+            itemElem.innerHTML=`${this.splitAndCapitalize(item)} : <span class="borrowing-item-value">${monthObject.item}</span>}`;
+            container.appendChild(itemElem);
+        }
+
+        return container;
+
+    }
+    renderUserBorrowingHistoryModal(historyObject){
+        
     }
     renderUserMonthlyContributionsModal(){
 
