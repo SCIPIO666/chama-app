@@ -177,9 +177,15 @@ class CreateElements {
         button2.textContent = "Monthly Contributions";
         const button3 = this.createElement("button", "class", "profit-share");
         button3.textContent = "Profit Share";
+        const button4 = this.createElement("button", "class", "edit-profile");
+        button4.textContent = "Edit Profile";
+        const button5 = this.createElement("button", "class", "remove-member");
+        button5.textContent = "Remove Member";
         userActionsContainer.appendChild(button1);
         userActionsContainer.appendChild(button2);
         userActionsContainer.appendChild(button3);
+        userActionsContainer.appendChild(button4);
+        userActionsContainer.appendChild(button5);
         ctn.appendChild(userActionsContainer);
         this.parentElem.appendChild(ctn);
     }
@@ -307,6 +313,20 @@ class CreateElements {
     
     generateLedger(ledgerData) {
         this.parentElem.innerHTML = ""; 
+
+        const ledgerActionsContainer = this.createElement("div", "class", "ledger-actions-container");
+        const button1 = this.createElement("button", "class", "record-money-in");
+        button1.textContent = "Record Money In";
+        const button2 = this.createElement("button", "class", "record-money-out");
+        button2.textContent = "Record Money Out";
+        const button3 = this.createElement("button", "class", "get-monthly-cashflow-summary");
+        button3.textContent = "Cash Flow Summary";
+        userActionsContainer.appendChild(button1);
+        userActionsContainer.appendChild(button2);
+        userActionsContainer.appendChild(button3);
+        ctn.appendChild(ledgerActionsContainer);
+        this.parentElem.appendChild(ctn);
+
         for (let month in ledgerData) {
             const table1 = this.createLedgerMonthLayer("moneyin", month, ledgerData[month]); 
             const table2 = this.createLedgerMonthLayer("moneyout", month, ledgerData[month]);       

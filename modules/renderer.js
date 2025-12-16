@@ -74,29 +74,40 @@ class ModalRenderer{
         this.elements.modal.classList.remove("show");
         this.elements.container.toggle("hide");
     }
-    renderLedgerOptions(){
-        const div1=this.componentClass.createElement("div","textContent","Money In");
-        const div1Ctn=this.componentClass.createElement("div","class","option-container");
-        div1.classList.add("money-in-option");
-        div1Ctn.appendChild(div1);
-        const div2=this.componentClass.createElement("div","textContent","Money Out");
-        const div2Ctn=this.componentClass.createElement("div","class","option-container");
-         div2Ctn.appendChild(div2);
-        div1.classList.add("money-out-option");
-        const parent=this.elements.modal;
-        parent.appendChild(div1Ctn);
-        parent.appendChild(div1Ctn);
-    }
+    //---add ledger transaction---//
     renderAddLedgerMoneyOutTransactionsModalOnclick(){
         const parent=this.elements.modal;
         parent.innerHTML="";
-       const fields=[{fieldType: "date",label:"Date"},{fieldType: "number",label:"Amount" , attributes:[{min:1 , max: 100000}],}];
+       const fields=[
+        {fieldType: "date",label:"Date",attributes:[{attribute:"class" , value: "date"}]},
+        {fieldType: "number",label:"Amount" , attributes:[{attribute:"min" , value: 1},{attribute:"max" , value: 1000000},{attribute:"class" , value: "amount"}]},
+        {fieldType: "text",label:"Sent To",attributes:[{attribute:"class" , value: "to"}]},
+        {fieldType: "number",label:"Transaction Charges",attributes:[{attribute:"class" , value: "transaction-charges"}]},     
+        ];
 
-
+        const form=this.componentClass.createForm("MONEY OUT TRANSACTIONS",fields);
+        const saveBtn=this.componentClass.createElement("button","class","save-money-out");
+        saveBtn.textContent="Save";
+        parent.appendChild(form);
+        parent.appendChild(saveBtn);
     }
     renderAddLedgerMoneyInTransactionsModalOnclick(){
+        const parent=this.elements.modal;
+        parent.innerHTML="";
+       const fields=[
+        {fieldType: "date",label:"Date",attributes:[{attribute:"class" , value: "date"}]},
+        {fieldType: "number",label:"Amount" , attributes:[{attribute:"min" , value: 1},{attribute:"max" , value: 1000000},{attribute:"class" , value: "amount"}]},
+        {fieldType: "text",label:"Received From",attributes:[{attribute:"class" , value: "from"}]},   
+        ];
 
+        const form=this.componentClass.createForm("MONEY IN TRANSACTIONS",fields);
+        const saveBtn=this.componentClass.createElement("button","class","save-money-in");
+        saveBtn.textContent="Save";
+        parent.appendChild(form);
+        parent.appendChild(saveBtn);
     }
+
+    //-----user profile buttons------//
     renderUserBorrowingHistoryModal(){
 
     }
