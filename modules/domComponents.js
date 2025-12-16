@@ -88,6 +88,7 @@ class CreateElements {
     }
 
     addFormFField(form, formFieldsArray) {
+         //fieldsArray=[{fieldType: "text",label:"First Name" attributes: [{attribute: "",value: ""},{attribute: "",value: ""}]}];---structure
         formFieldsArray.forEach(field => {
             const ctn = this.createElement("div", "class", "form-field");
             const idName = field.label.toLowerCase().trim().replace(/\s/g, "-");

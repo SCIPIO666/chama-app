@@ -469,3 +469,63 @@ tbody tr:hover {
 .show {
     display: block; 
 }
+.close-button {
+    
+    padding: 10px;
+    background-color: #415A77;
+    color: #E0FBFC;
+    font-size: 1.5em; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    cursor: pointer;
+     transition: color .3s ease-in-out,transform .3s ease-in-out,box-shadow .3s ease-in-out;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    line-height: 1; 
+    z-index: 5000;
+    text-align: center;
+}
+
+.close-button:hover{
+ transform: scale(1.05);
+color: #00BCD4;
+box-shadow: 1px 3px 12px rgba(0,0,0,0.5);
+
+}
+.option-container{
+    width: 40%;
+    height: 400px;
+    padding: 30px;
+    margin: 10px;
+}
+.option-container.money-in-option{
+    margin: 20px;
+    border-right: solid 4px white;
+}
+.money-in-option,.money-out-option{
+    padding: 15px;
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 2px brown;
+background: linear-gradient(to bottom, #1B263B, #415A77);
+border-radius: 5px;
+    box-shadow: 1px 3px 12px rgba(0,0,0,0.5);
+    transition: box-shadow .3s ease-in-out,transform .3s ease-in-out,border-color .3s ease-out;
+}
+.money-in-option:hover,.money-out-option:hover{
+
+ box-shadow: 
+ 0 4px 8px rgba(0, 188, 212, 0.4),
+ 0 0 10px rgba(0, 188, 212, 0.6); 
+ transform: scale(1.08);
+border-color: #98C1D9;
+}
+
