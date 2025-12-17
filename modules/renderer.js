@@ -16,6 +16,7 @@ class Render{
         this.renderMemberProfilesOnClick();
         this.renderContributionsOnClick();
         this.renderLoansOnClick();
+         this.renderTransactionsLedgerOnClick();
     }
     slideInNavigationOnClick(){
         const nav=this.elements.navMenu;
@@ -80,16 +81,16 @@ class Render{
 
     }
     renderTransactionsLedgerOnClick(){
-        const loansData=appModel.loans;
-        const showLoansBtn=this.elements.menuItemLoans;
-        showLoansBtn.addEventListener("click",e=>{
+        
+        const ledgerData=appModel.cashInCashOutLedger;
+        const showLedgerBtn=this.elements.menuItemTransactionLedger;
+        showLedgerBtn.addEventListener("click",e=>{
             e.preventDefault();
-            this.componentClass.createLoansSummaryTable(2025, loansData);
-            console.log("loans ");
+            this.componentClass.generateLedger(ledgerData) ;
         });
     }
     renderNonPerformingLoansOnClick(){
-
+        createNonPerformingLoansTable(year, nonMembersArray)
     }
 
 }
