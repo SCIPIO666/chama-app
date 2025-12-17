@@ -74,13 +74,19 @@ class Render{
         });
     }
     renderMonthlyProfitLossOnClick(){
-        
+
     }
     renderProfitShareOnClick(){
 
     }
     renderTransactionsLedgerOnClick(){
-
+        const loansData=appModel.loans;
+        const showLoansBtn=this.elements.menuItemLoans;
+        showLoansBtn.addEventListener("click",e=>{
+            e.preventDefault();
+            this.componentClass.createLoansSummaryTable(2025, loansData);
+            console.log("loans ");
+        });
     }
     renderNonPerformingLoansOnClick(){
 
