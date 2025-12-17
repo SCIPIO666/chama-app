@@ -1,9 +1,7 @@
 const domElements = {
     hamburgerButton: document.querySelector(".hamburger-menu-button"),
     closeButton: document.querySelector(".menu-close-button"),
-    navMenu: document.querySelector(".nav-menu"),
-    navSlider: document.querySelector(".navigation"),
-    navSliderVisible: document.querySelector(".visible"),
+    navMenu: document.querySelector(".navigation"),
     menuItemAddMembers: document.querySelector(".add-members"),
     menuItemMemberProfiles: document.querySelector(".member-profiles"),
     menuItemContributions: document.querySelector(".contributions"),

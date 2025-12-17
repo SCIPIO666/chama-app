@@ -1,5 +1,6 @@
 import { domElements,components} from "./domComponents.js";
 
+
 //add click events and render on click
 
 class Render{
@@ -7,14 +8,35 @@ class Render{
         this.elements=elements;
         this.componentClass=componentClass;
     }
-
+    initEvents(){
+       this.slideInNavigationOnClick();
+        this.closeNavigationOnClick();
+    }
     slideInNavigationOnClick(){
+        const nav=this.elements.navMenu;
+        const hamburgerButton=this.elements.hamburgerButton;
+        const dashboard=this.elements.dashboard;
+        hamburgerButton.addEventListener("click",e=>{
+            nav.classList.toggle("visible");
+            dashboard.classList.toggle("split-width");
+        });
 
     }
     closeNavigationOnClick(){
+        const nav=this.elements.navMenu;
+        const closeButton=this.elements.closeButton;
+        const dashboard=this.elements.dashboard;
 
+        closeButton.addEventListener("click",e=>{
+            nav.classList.toggle("visible");
+            dashboard.classList.toggle("split-width");
+        });
     }
     renderAddMemberOnClick(){
+        const addMembersButton=this.elements.menuItemAddMembers;
+        addMembersButton.addEventListener("click",e=>{
+            
+        });
 
     }
     renderMemberProfilesOnClick(){
@@ -174,3 +196,7 @@ class ModalRenderer{
     }
 
 }
+const modal=new ModalRenderer(domElements,components);
+const dashboard=new Render(domElements,components);
+
+export {modal,dashboard};
