@@ -248,8 +248,8 @@ font-weight: bold;
 } */
  /* --- Styles for Profile Views (.user) --- */
 .user {
-    width: 300px; 
-    height: auto;
+    width: 32%; 
+    height: 400px;
     min-height: 400px; 
     margin: 15px;
     padding: 20px;

@@ -708,3 +708,5 @@ const appModel = {
         },
     },
 };
+
+export {appModel} ;

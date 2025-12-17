@@ -1,4 +1,5 @@
 import { domElements,components} from "./domComponents.js";
+import { appModel } from "../data.js";
 
 
 //add click events and render on click
@@ -11,12 +12,17 @@ class Render{
     initEvents(){
        this.slideInNavigationOnClick();
         this.closeNavigationOnClick();
+        this.renderAddMemberOnClick();
+        this.renderMemberProfilesOnClick();
+        this.renderContributionsOnClick();
+        this.renderLoansOnClick();
     }
     slideInNavigationOnClick(){
         const nav=this.elements.navMenu;
         const hamburgerButton=this.elements.hamburgerButton;
         const dashboard=this.elements.dashboard;
         hamburgerButton.addEventListener("click",e=>{
+            e.preventDefault();
             nav.classList.toggle("visible");
             dashboard.classList.toggle("split-width");
         });
@@ -28,6 +34,7 @@ class Render{
         const dashboard=this.elements.dashboard;
 
         closeButton.addEventListener("click",e=>{
+            e.preventDefault();
             nav.classList.toggle("visible");
             dashboard.classList.toggle("split-width");
         });
@@ -35,21 +42,39 @@ class Render{
     renderAddMemberOnClick(){
         const addMembersButton=this.elements.menuItemAddMembers;
         addMembersButton.addEventListener("click",e=>{
-            
+            e.preventDefault();
+            this.componentClass. createAddMemberForm() ;
         });
 
     }
     renderMemberProfilesOnClick(){
+        const profilesDataArray=appModel.members;
+        const showMembersButton=this.elements.menuItemMemberProfiles;
+        showMembersButton.addEventListener("click",e=>{
+            e.preventDefault();
+            this.componentClass.generateProfileGrid(profilesDataArray) ;
+        });
 
     }
     renderContributionsOnClick(){
-
+        const profilesDataArray=appModel.members;
+        const showContributionsBtn=this.elements.menuItemContributions;
+        showContributionsBtn.addEventListener("click",e=>{
+            e.preventDefault();
+            this.componentClass.createContributionsTable(2025, profilesDataArray) 
+        });
     }
     renderLoansOnClick(){
-
+        const loansData=appModel.loans;
+        const showLoansBtn=this.elements.menuItemLoans;
+        showLoansBtn.addEventListener("click",e=>{
+            e.preventDefault();
+            this.componentClass.createLoansSummaryTable(2025, loansData);
+            console.log("loans ")
+        });
     }
     renderMonthlyProfitLossOnClick(){
-
+        
     }
     renderProfitShareOnClick(){
 

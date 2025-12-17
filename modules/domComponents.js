@@ -134,37 +134,38 @@ class CreateElements {
     }
     
     createProfile(profileObject) {
+
         const ctn = this.createElement("div", "class", "user");
         const image = this.createElement("img", "class", "user-image");
         ctn.appendChild(image);
         
         const fullName = profileObject.firstName + " " + profileObject.lastName;
         const labelElem = this.createElement("span", "textContent", "Name: ");
-        const nameElem = this.createElement("div", "class", "name profile-item");
+        const nameElem = this.createElement("div", "class", "name,profile-item");
         nameElem.innerHTML = `${labelElem.outerHTML} ${fullName}`; 
         ctn.appendChild(nameElem);
 
         const registeredNumbers = profileObject.registeredNumbers;
         const spanElem = this.createElement("span", "textContent", "Registered Numbers: ");
-        const numberElem = this.createElement("div", "class", "numbers profile-item");
+        const numberElem = this.createElement("div", "class", "numbers,profile-item");
         numberElem.innerHTML = `${spanElem.outerHTML} ${registeredNumbers}`;
         ctn.appendChild(numberElem);
 
         const contributions = profileObject.totalContributions;
         const spanCont = this.createElement("span", "textContent", "Total Contributions: ");
-        const contElem = this.createElement("div", "class", "contributions profile-item");
+        const contElem = this.createElement("div", "class", "contributions,profile-item");
         contElem.innerHTML = `${spanCont.outerHTML} ${contributions}`;
         ctn.appendChild(contElem);
 
         const returnOnInvestment = profileObject.totalProfit;
         const spanLabel = this.createElement("span", "textContent", "Total Profit : ");
-        const returnOnInvestmentElem = this.createElement("div", "class", "total-profit profile-item");
+        const returnOnInvestmentElem = this.createElement("div", "class", "total-profit,profile-item");
         returnOnInvestmentElem.innerHTML = `${spanLabel.outerHTML} ${returnOnInvestment}`; 
         ctn.appendChild(returnOnInvestmentElem);
 
         const bal = profileObject.memberAccountBalance;
         const span = this.createElement("span", "textContent", "Account Balance: ");
-        const balElem = this.createElement("div", "class", "balance profile-item");
+        const balElem = this.createElement("div", "class", "balance,profile-item");
         balElem.innerHTML = `${span.outerHTML} ${bal}`; 
         ctn.appendChild(balElem);
 
@@ -190,6 +191,7 @@ class CreateElements {
     
     
     generateProfileGrid(profilesDataArray) {
+         this.parentElem.innerHTML="";
         profilesDataArray.forEach(profileObject => {
             this.createProfile(profileObject);
         });
